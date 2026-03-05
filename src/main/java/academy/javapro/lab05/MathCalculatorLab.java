@@ -61,7 +61,7 @@ public class MathCalculatorLab {
         
         return new Runnable() {
             public void run() {
-                calc.result = fib.apply(calc.n);
+                calc.result = fibmath.fib(calc.n);
             }
         }; // Replace this
     }
