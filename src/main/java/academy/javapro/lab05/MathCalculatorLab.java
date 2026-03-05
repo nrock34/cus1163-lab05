@@ -80,7 +80,21 @@ public class MathCalculatorLab {
     // Example: sumOfSquares(5) = 1 + 4 + 9 + 16 + 25 = 55
     public static Runnable sumOfSquaresCalculator(CalculatorBase calc) {
         // TODO: Return a Runnable (use lambda or anonymous class)
-        return null; // Replace this
+        class ssqmath {
+            static int sq(int n) {
+                int temp = 0
+                for (int i = 1; i <= n; i++) {
+                    temp = i ** i;
+                }
+                return temp
+            }
+        }
+        
+        return new Runnable() {
+            public void run() {
+                calc.result = ssqmath.sq(calc.n);
+            }
+        }; // Replace // Replace this
     }
 
     // Main method (PROVIDED - DO NOT MODIFY)
