@@ -54,7 +54,9 @@ public class MathCalculatorLab {
         };
         
         return new Runnable() {
-            calc.result = fib(calc.n);
+            public void run {
+                calc.result = fib(calc.n);
+            }
         }; // Replace this
     }
 
