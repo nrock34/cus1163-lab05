@@ -187,7 +187,7 @@ public class MathCalculatorLab {
         System.out.print("Enter a number (1-20): ");
         int n = scanner.nextInt();
 
-        if (n < 1 || n > 20) {
+        if (n < 1) {
             System.out.println("Number must be between 1 and 20");
             return;
         }
