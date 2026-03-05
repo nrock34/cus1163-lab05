@@ -1,8 +1,23 @@
 package academy.javapro.lab05;
 
 import java.util.Scanner;
+import java.util.Map;
+import java.util.LinkedHashMap;
 
 public class MathCalculatorLab {
+
+
+    static class LRUCache<K, V> extends LinkedHashMap<K, V> {
+        private final int capacity;
+        public LRUCache(int capacity) {
+            super(capacity, 0.75f, true);
+            this.capacity = capacity;
+        }
+        @Override
+        protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
+            return size() > capacity;
+        }
+    }
 
     // Simple class to hold calculation data (PROVIDED - DO NOT MODIFY)
     static class CalculatorBase {
@@ -31,7 +46,16 @@ public class MathCalculatorLab {
     // Example: fibonacci(8) = 21
     public static Runnable fibonacciCalculator(CalculatorBase calc) {
         // TODO: Return a Runnable (use lambda or anonymous class)
-        return null; // Replace this
+
+        Function<Integer, Integer> fib = (n) -> {
+            if (n == 0) return 0;
+            if (n == 1) return 1;
+            return fib(n-1) + fib(n-2)
+        }
+        
+        return new Runnable() {
+            calc.result = fib(calc.n)
+        }; // Replace this
     }
 
     // TODO 2: Implement this method
