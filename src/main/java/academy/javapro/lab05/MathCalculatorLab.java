@@ -48,11 +48,16 @@ public class MathCalculatorLab {
     public static Runnable fibonacciCalculator(CalculatorBase calc) {
         // TODO: Return a Runnable (use lambda or anonymous class)
 
-        Function<Integer, Integer> fib = (n) -> {
-            if (n == 0) return 0;
-            if (n == 1) return 1;
-            return fib.apply(n-1) + fib.apply(n-2);
-        };
+        class fibmath {
+            new LRUCache<Integer, Integer> cache = new LRUCache<Integer, Integer>();
+            static int fib(int n) {
+                if (n <= 1) return n;
+                int val = cache.getOrDefault(n, -1);
+                if (val == -1) {
+                    return val;
+                } else return fib(n-1) + fib(n-2);
+            }
+        }
         
         return new Runnable() {
             public void run() {
