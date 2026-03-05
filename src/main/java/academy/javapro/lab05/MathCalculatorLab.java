@@ -84,7 +84,7 @@ public class MathCalculatorLab {
             static int sq(int n) {
                 int temp = 0
                 for (int i = 1; i <= n; i++) {
-                    temp = i ** i;
+                    temp = temp + (i ** i);
                 }
                 return temp
             }
