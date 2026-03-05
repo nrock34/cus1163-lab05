@@ -82,11 +82,11 @@ public class MathCalculatorLab {
         // TODO: Return a Runnable (use lambda or anonymous class)
         class ssqmath {
             static int sq(int n) {
-                int temp = 0
+                int temp = 0;
                 for (int i = 1; i <= n; i++) {
-                    temp = temp + (i ** i);
+                    temp = temp + (i * i);
                 }
-                return temp
+                return temp;
             }
         }
         
