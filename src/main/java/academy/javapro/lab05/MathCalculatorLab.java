@@ -3,6 +3,7 @@ package academy.javapro.lab05;
 import java.util.Scanner;
 import java.util.Map;
 import java.util.LinkedHashMap;
+import java.util.function.Function;
 
 public class MathCalculatorLab {
 
@@ -55,7 +56,7 @@ public class MathCalculatorLab {
         
         return new Runnable() {
             public void run() {
-                calc.result = fib(calc.n);
+                calc.result = fib.apply(calc.n);
             }
         }; // Replace this
     }
