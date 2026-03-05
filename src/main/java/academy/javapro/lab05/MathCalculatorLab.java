@@ -49,7 +49,7 @@ public class MathCalculatorLab {
         // TODO: Return a Runnable (use lambda or anonymous class)
 
         class fibmath {
-            LRUCache<Integer, Integer> cache = new LRUCache<Integer, Integer>(100);
+            static LRUCache<Integer, Integer> cache = new LRUCache<Integer, Integer>(100);
             static int fib(int n) {
                 if (n <= 1) return n;
                 int val = cache.getOrDefault(n, -1);
