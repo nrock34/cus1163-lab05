@@ -53,7 +53,7 @@ public class MathCalculatorLab {
             static int fib(int n) {
                 if (n <= 1) return n;
                 int val = cache.getOrDefault(n, -1);
-                if (val == -1) {
+                if (val != -1) {
                     return val;
                 } else return fib(n-1) + fib(n-2);
             }
